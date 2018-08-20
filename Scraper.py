@@ -115,10 +115,10 @@ def scraper():
     #keyword = args.keyword
     #place = args.place
 
-    keyword = input("Enter Job Name: ")
-    place = input("Enter Location: ")
-    #keyword = "Software Engineer"
-    #lace = "Snohomish"
+    #keyword = input("Enter Job Name: ")
+    #place = input("Enter Location: ")
+    keyword = "Software Engineer"
+    place = "Seattle"
 
     print("Fetching job details")
     scraped_data = parse(keyword, place)
