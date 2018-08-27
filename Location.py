@@ -27,6 +27,9 @@ class Location:
     def getCity(self):
         return self.city
 
+    def getState(self):
+        return self.state
+
     def getNumberOfJobs(self):
         return self.numberOfJobs
 
@@ -66,5 +69,5 @@ class Location:
     def setSalaryCostRatio(self):
         print(self.averageSalary)
         print(self.costOfLivingIndex)
-        print("RATIO" + str(float(self.averageSalary)/float(self.costOfLivingIndex)))
+        print("RATIO: " + str(float(self.averageSalary)/float(self.costOfLivingIndex)))
         self.salaryCostRatio = float(self.averageSalary)/float(self.costOfLivingIndex)

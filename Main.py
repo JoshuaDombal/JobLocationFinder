@@ -24,6 +24,7 @@ if __name__ == "__main__":
 
         f = open('locationInfo.txt', 'w')
         count = 0
+        job1 = None
         for line in myFile:
             count += 1
             locat = Location()
@@ -52,7 +53,7 @@ if __name__ == "__main__":
 
                         jobPlace = scraper(locat.getCity())
                         if (not (jobPlace[1] == -1)):
-                            job = jobPlace[0]
+                            job1 = jobPlace[0]
                             loc = jobPlace[1]
 
                             current_loation = os.getcwd()
@@ -63,7 +64,7 @@ if __name__ == "__main__":
 
                             # Loops through each line in the CSV file
                             # Creates a Job object per line and adds each job to the specific Location object
-                            with open(current_loation + '\\' + job + '-' + loc + '-job-results.csv') as csvfile:
+                            with open(current_loation + '\\' + job1 + '-' + loc + '-job-results.csv') as csvfile:
                                 readCSV = csv.reader(csvfile, delimiter=',')
                                 for row in readCSV:
 
@@ -80,7 +81,7 @@ if __name__ == "__main__":
                                 f.write(
                                     locat.getCity() + "," + str(locat.getAverageSalary()) + "," + str(locat.getCostOfLivingIndex()) + "," + str(locat.getSalaryCostRatio()))
                                 f.write('\n')
-                                print("Average salary" + str(averageSalary))
+                                print("Average salary: " + str(averageSalary))
 
                         colLocations.addLocation(locat)
 
@@ -93,8 +94,13 @@ if __name__ == "__main__":
             #print(n)
             #print(colLocations.getNumberOfLocations())
         print("TOPS")
+        fName = 'top10' + "-" + job1 + ".txt"
+        topPicks = open(fName, 'w')
         for top in colLocations.getTop10():
-            print("City: " + top.getCity() + ",  ratio: " + str(top.getSalaryCostRatio()))
+            topPicks.write(top.getCity() + ", " + top.getState() + ", " + str(top.getSalaryCostRatio()))
+            topPicks.write('\n')
+
+            print("City: " + top.getCity() + ", " + top.getState() + "         Ratio: " + str(top.getSalaryCostRatio()))
 
         '''
         for l in colLocations.getLocations():
