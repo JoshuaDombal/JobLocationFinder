@@ -104,7 +104,7 @@ def parse(keyword, place):
         print("Failed to load locations")
 
 
-def scraper():
+def scraper(place):
 
     ''' eg-:python 1934_glassdoor.py "Android developer", "new york" '''
 
@@ -118,7 +118,7 @@ def scraper():
     #keyword = input("Enter Job Name: ")
     #place = input("Enter Location: ")
     keyword = "Software Engineer"
-    place = "Seattle"
+    #place = "Seattle"
 
     print("Fetching job details")
     scraped_data = parse(keyword, place)
@@ -140,5 +140,6 @@ def scraper():
 
         else:
             print("Your search for %s, in %s does not match any jobs" % (keyword, place))
+            return [keyword, -1]
 
 

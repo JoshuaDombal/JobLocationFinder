@@ -4,6 +4,7 @@ class Location:
 
     city = None
     state = None
+    country = None
     averageSalary = None
     numberOfJobs = None
     jobs = []
@@ -16,13 +17,15 @@ class Location:
     def __init__(self):
         self.city = None
         self.state = None
+        self.country = None
         self.averageSalary = 0
         self.numberOfJobs = 0
         self.jobs = []
         self.costOfLivingIndex = 0
         self.salaryCostRatio = 0
 
-
+    def getCity(self):
+        return self.city
 
     def getNumberOfJobs(self):
         return self.numberOfJobs
@@ -31,7 +34,13 @@ class Location:
         return self.jobs
 
     def getAverageSalary(self):
-        return self.averageSalary/len(self.jobs)
+        return self.averageSalary
+
+    def getCostOfLivingIndex(self):
+        return self.costOfLivingIndex
+
+    def getSalaryCostRatio(self):
+        return self.salaryCostRatio
 
     # ************************   SETTERS    *************************** #
 
@@ -43,7 +52,10 @@ class Location:
         self.city = city
 
     def setState(self, state):
-        self.city = state
+        self.state = state
+
+    def setCountry(self, country):
+        self.country = country
 
     def setAverageSalary(self, avgSalary):
         self.averageSalary = avgSalary
@@ -52,4 +64,7 @@ class Location:
         self.costOfLivingIndex = colIndex
 
     def setSalaryCostRatio(self):
-        self.salaryCostRatio = self.averageSalary/self.costOfLivingIndex
+        print(self.averageSalary)
+        print(self.costOfLivingIndex)
+        print("RATIO" + str(float(self.averageSalary)/float(self.costOfLivingIndex)))
+        self.salaryCostRatio = float(self.averageSalary)/float(self.costOfLivingIndex)
