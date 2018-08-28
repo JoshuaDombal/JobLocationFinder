@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # Saves locations and cost information
     colLocations = Locations()
     try:
-        myFile = open('C:\\Users\\josh.dombal\\PycharmProjects\\JobLocationFinder\\tempCOL', mode='r')
+        myFile = open('C:\\Users\\josh.dombal\\PycharmProjects\\JobLocationFinder\\costOfLiving', mode='r')
 
         f = open('locationInfo.txt', 'w')
         count = 0
