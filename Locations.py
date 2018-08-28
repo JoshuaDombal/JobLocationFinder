@@ -21,9 +21,9 @@ class Locations:
 
     def addLocation(self, location):
         self.locations.append(location)
-        self.numberOfLocations += 1
 
-        if (self.numberOfLocations == 1):
+
+        if (self.numberOfLocations == 0):
             self.min = location
             self.max = location
 
@@ -44,7 +44,7 @@ class Locations:
                     if (i.getSalaryCostRatio() < tmin.getSalaryCostRatio()):
                         tmin = i
                 self.min = tmin
-
+        self.numberOfLocations += 1
     def getLocations(self):
         return self.locations
 

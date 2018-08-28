@@ -98,16 +98,16 @@ if __name__ == "__main__":
         topPicks = open(fName, 'w')
         colLocations.getTop10().sort(key=lambda a: a.salaryCostRatio, reverse=True)
         for top in colLocations.getTop10():
-            topPicks.write(top.getCity() + ", " + top.getState() + ", " + str(top.getSalaryCostRatio()))
+            topPicks.write(top.getCity() + ", " + top.getState() + ", " + str(top.getSalaryCostRatio()) + "             Average Salary: " + str(top.getAverageSalary()) + "            Cost of Living Index: " + str(top.getCostOfLivingIndex()))
             topPicks.write('\n')
 
-            print("City: " + top.getCity() + ", " + top.getState() + "         Ratio: " + str(top.getSalaryCostRatio()))
+            print("City: " + top.getCity() + ", " + top.getState() + "         Ratio: " + str(top.getSalaryCostRatio()) + "               Average Salary: " + str(top.getAverageSalary()) + "               Cost of Living Index: " + str(top.getCostOfLivingIndex()))
 
         print("_______________________________________________________________________")
 
         colLocations.getLocations().sort(key=lambda x: x.salaryCostRatio, reverse=True)
         for loc in colLocations.getLocations():
-            print(loc.getCity() + ", " + str(loc.getSalaryCostRatio()))
+            print(loc.getCity() + ", " + str(loc.getSalaryCostRatio()) + "               Average Salary: " + str(top.getAverageSalary()))
 
 
         '''
