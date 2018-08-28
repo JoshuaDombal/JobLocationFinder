@@ -96,11 +96,19 @@ if __name__ == "__main__":
         print("TOPS")
         fName = 'top10' + "-" + job1 + ".txt"
         topPicks = open(fName, 'w')
+        colLocations.getTop10().sort(key=lambda a: a.salaryCostRatio, reverse=True)
         for top in colLocations.getTop10():
             topPicks.write(top.getCity() + ", " + top.getState() + ", " + str(top.getSalaryCostRatio()))
             topPicks.write('\n')
 
             print("City: " + top.getCity() + ", " + top.getState() + "         Ratio: " + str(top.getSalaryCostRatio()))
+
+        print("_______________________________________________________________________")
+
+        colLocations.getLocations().sort(key=lambda x: x.salaryCostRatio, reverse=True)
+        for loc in colLocations.getLocations():
+            print(loc.getCity() + ", " + str(loc.getSalaryCostRatio()))
+
 
         '''
         for l in colLocations.getLocations():
