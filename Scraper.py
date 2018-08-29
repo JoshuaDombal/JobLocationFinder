@@ -117,7 +117,7 @@ def scraper(place):
 
     #keyword = input("Enter Job Name: ")
     #place = input("Enter Location: ")
-    keyword = "Software Engineer"
+    keyword = "Nurse"
     #place = "Seattle"
 
     print("Fetching job details")

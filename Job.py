@@ -16,5 +16,15 @@ class Job:
         self.salary = salary
 
 
+    def getState(self):
+        return self.state
+
+    def getCity(self):
+        return self.city
+
     def getSalary(self) :
         return self.salary
+
+
+
+

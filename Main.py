@@ -1,3 +1,12 @@
+# Created by Josh Dombal
+# Created August 22, 2018
+#
+#  This programs purpose is to display a list of the best locations to live based on the salary of
+#    your job compared to the cost of living in a city.
+#  Salary and Cost of Living data is scraped from the internet so that it is updated.
+
+
+
 import csv
 import os
 
@@ -85,14 +94,6 @@ if __name__ == "__main__":
 
                         colLocations.addLocation(locat)
 
-
-
-
-            if (count == 10):
-                break
-            #n = [x.strip() for x in new.split('\t')]
-            #print(n)
-            #print(colLocations.getNumberOfLocations())
         print("TOPS")
         fName = 'top10' + "-" + job1 + ".txt"
         topPicks = open(fName, 'w')
