@@ -34,12 +34,14 @@ if __name__ == "__main__":
         f = open('locationInfo.txt', 'w')
         count = 0
         job1 = None
+        # Runs through each line costOfLiving.txt and scrapes info about jobs for each location
         for line in myFile:
             count += 1
             locat = Location()
             #print(line)
             new = [x.strip() for x in line.split(',')]
             #print(new)
+            # Splits the line by \t to extract data more easily
             for s in new:
                 n = s.split('\t')
                 if (len(n) == 2):
@@ -61,6 +63,7 @@ if __name__ == "__main__":
                         # print(l.getCity())
 
                         jobPlace = scraper(locat.getCity())
+                        # If information regarding a city was able to be scraped from web
                         if (not (jobPlace[1] == -1)):
                             job1 = jobPlace[0]
                             loc = jobPlace[1]
